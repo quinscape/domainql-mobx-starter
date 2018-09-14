@@ -1,44 +1,47 @@
 {
-  "name": "mobx-react-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for MobX + React project with JSX, ES6 and decorator compilation",
-  "scripts": {
-    "start": "webpack-dev-server --hot --open",
-    "lint": "eslint src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mobxjs/mobx-react-boilerplate.git"
-  },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "mobx",
-    "starter-kit"
-  ],
-  "author": "Michel Weststrate <mweststrate@gmail.com> (http://github.com/mweststrate)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mobxjs/mobx/issues"
-  },
-  "homepage": "http://mobxjs.github.com/mobx",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-decorators-legacy": "^1.3.5",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
-  },
-  "dependencies": {
-    "mobx": "^5.0.3",
-    "mobx-react": "^5.2.3",
-    "mobx-react-devtools": "^6.0.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
-  }
+    "name": "domainql-mobx-starter",
+    "description": "Boilerplate for MobX + React project with JSX, ES6 and decorator compilation",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mobxjs/mobx-react-boilerplate.git"
+    },
+    "keywords": [],
+    "author": "Sven Helmberger",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "7",
+        "babel-plugin-espower": "^3.0.0",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "babel-plugin-transform-decorators-legacy": "^1.3.5",
+        "babel-plugin-transform-imports": "^1.5.1",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.15",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
+        "cross-env": "^5.2.0",
+        "domainql-webpack-plugin": "^0.0.3",
+        "jsview-webpack-plugin": "^0.1.0",
+        "mini-css-extract-plugin": "^0.4.2",
+        "mocha": "^5.2.0",
+        "power-assert": "^1.6.1",
+        "shelljs": "^0.8.2",
+        "webpack": "^4.19.0",
+        "webpack-cli": "^3.1.0"
+    },
+    "dependencies": {
+        "jsview-bootstrap": "^0.1.0",
+        "mobx": "^5.1.1",
+        "mobx-react": "^5.2.8",
+        "mobx-react-devtools": "^6.0.3",
+        "react": "^16.5.1",
+        "react-dom": "^16.5.1"
+    },
+    "scripts": {
+        "build": "cross-env NODE_ENV=production webpack -p",
+        "build-dev": "cross-env NODE_ENV=development webpack --debug --output-pathinfo",
+        "watch": "cross-env NODE_ENV=development webpack --debug --output-pathinfo -w",
+        "test": "cross-env NODE_ENV=production BABEL_ENV=test mocha --require babel-register -R spec src/test/js/"
+    }
 }

@@ -1,8 +1,34 @@
 {
-  "presets": [
-    "react",
-    "es2015",
-    "stage-1"
-  ],
-  "plugins": ["transform-decorators-legacy" /* should always be the first plugin! */]
+    "presets": [
+        "react",
+        "es2015",
+        "stage-1"
+    ],
+    "plugins": [
+        "transform-decorators-legacy", /* should always be the first plugin! */
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "syntax-dynamic-import"
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "babel-plugin-espower"
+            ]
+        },
+        "production": {
+            "plugins": [
+                [
+                    "transform-imports", {
+                    "reactstrap": {
+                        "transform": "reactstrap/lib/${member}",
+                        "preventFullImport": true
+                    }
+                }
+                ],
+                "transform-react-remove-prop-types"
+            ]
+        }
+    }
 }
+
